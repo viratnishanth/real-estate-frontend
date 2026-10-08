@@ -1,0 +1,140 @@
+.top-header {
+  height: 70px;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: relative;
+  z-index: 999;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 300px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.header-search:focus-within {
+  border-color: var(--accent-color);
+  background-color: var(--surface-color);
+}
+
+.header-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-left: 8px;
+  width: 100%;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.header-search input::placeholder {
+  color: var(--text-secondary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.icon-btn:hover {
+  color: var(--primary-color);
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.profile-btn:hover {
+  background-color: var(--bg-color);
+}
+
+.profile-btn span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.avatar-small {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ffe0b2;
+  color: #f57c00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.refresh-box {
+  width: 32px;
+  height: 32px;
+  background-color: var(--bg-color, var(--bg-color));
+  border: 1px solid var(--border-color, var(--border-color));
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.refresh-box:hover {
+  background-color: var(--primary-color, #4f46e5);
+  color: white;
+  border-color: var(--primary-color, #4f46e5);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .top-header {
+    padding: 0 16px;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .header-search {
+    width: 140px; /* Compress search on mobile */
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .profile-btn span {
+    display: none; /* Hide 'Admin' text on small screens, keep avatar */
+  }
+}
